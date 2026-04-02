@@ -1,0 +1,28 @@
+AKINWALE JUDE O.
+Senior Software Engineer | Full-Stack Developer | Tech Lead
+Bariga, Lagos, Nigeria | +234 906 443 0102 | judeakinwale@gmail.com
+https://github.com/judeakinwale
+PROFESSIONAL SUMMARY
+Senior Software Engineer and Technical Lead with 5 years of professional experience building production-grade full-stack web applications, data heavy real-time platforms and enterprise process automation applications. Developing high performance real-time systems for crypto trading, prediction markets and auction bidding and balloting. Strong background in TypeScript (React, Next.js and Express.js), Python (Django, FastAPI), SharePoint Framework (SPFx, React SPFx) and cloud platforms. Leadership skills demonstrated by mentoring teams and delivering production ready solutions with experience working with the Agile methodology.
+CORE SKILLS
+Languages & Frameworks: TypeScript, JavaScript, Python | React, Next.js, Express.js, Django, FastAPI | React SPFx
+Databases: PostgreSQL, MongoDB, MySQL, SQLite
+Real-time & Trading: WebSockets | Turnkey SDK, Polymarket SDKs and CLOB API, Solana
+DevOps & Cloud Platforms: Docker, GitHub Actions, CI/CD | Azure, AWS, Vercel
+Enterprise & Security: SharePoint, React SPFx | Turnkey SDK, Facial Recognition (OpenCV)
+Leadership: Technical Leadership, Architecture Design, Critical Thinking, Team Mentoring, Agile Development
+PROFESSIONAL EXPERIENCE
+Senior Software Engineer – Homepage, Dublin (Remote)
+Sep 2025 – Present
+Develop and maintain crypto trading and prediction market platforms using Next.js, Express.js, TypeScript, PostgreSQL and MongoDB.
+Full-Stack Developer → Tech Lead – Lotus Beta Analytics, Lagos (Hybrid)
+May 2021 – Sep 2025
+Built and maintained full-stack applications using React, Next.js, Express.js, Django, FastAPI, React SPFx and SharePoint.
+PROJECTS
+Prysm.trade – Full-Stack Developer / Tech Lead
+Electronic Testing System – Full-Stack Developer
+Attendance Management System – Full-Stack Developer / Tech Lead
+EDUCATION
+B.Sc. Applied Physics – University of Lagos
+CERTIFICATIONS
+Microsoft Certified: Azure Developer Associate (AZ-204)
