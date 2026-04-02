@@ -57,18 +57,43 @@ export default function Home() {
           </div>
         </section>
 
-        {/* MARQUEE SKILLS SECTION */}
-        <div id="skills" className="overflow-hidden border-y-4 border-brand bg-brand text-root-bg py-4 flex flex-nowrap animate-fade-up delay-300">
-          <div className="marquee-content font-archivo text-4xl lg:text-5xl tracking-tight">
-            {/* Repeated for seamless scroll effect */}
-            {['TYPESCRIPT', 'REACT', 'NEXT.JS', 'PYTHON', 'FASTAPI', 'POSTGRESQL', 'WEBSOCKETS', 'SOLANA', 'TURNKEY SDK', 'DOCKER'].map((skill, i) => (
-              <span key={`1-${i}`} className="mr-12">{skill}</span>
-            ))}
-            {['TYPESCRIPT', 'REACT', 'NEXT.JS', 'PYTHON', 'FASTAPI', 'POSTGRESQL', 'WEBSOCKETS', 'SOLANA', 'TURNKEY SDK', 'DOCKER'].map((skill, i) => (
-              <span key={`2-${i}`} className="mr-12">{skill}</span>
-            ))}
+        {/* SKILLS SECTION */}
+        <section id="skills" className="animate-fade-up delay-300">
+          {/* MARQUEE */}
+          <div className="overflow-hidden border-y-4 border-brand bg-brand text-root-bg py-4 flex flex-nowrap">
+            <div className="marquee-content font-archivo text-4xl lg:text-5xl tracking-tight">
+              {/* Repeated for seamless scroll effect */}
+              {['TYPESCRIPT', 'NODE.JS', 'REACT', 'NEXT.JS', 'PYTHON', 'FASTAPI', 'POSTGRESQL', 'WEBSOCKETS', 'SOLANA', 'TURNKEY SDK', 'DOCKER', 'REDIS', 'AWS'].map((skill, i) => (
+                <span key={`1-${i}`} className="mr-12">{skill}</span>
+              ))}
+              {['TYPESCRIPT', 'NODE.JS', 'REACT', 'NEXT.JS', 'PYTHON', 'FASTAPI', 'POSTGRESQL', 'WEBSOCKETS', 'SOLANA', 'TURNKEY SDK', 'DOCKER', 'REDIS', 'AWS'].map((skill, i) => (
+                <span key={`2-${i}`} className="mr-12">{skill}</span>
+              ))}
+            </div>
           </div>
-        </div>
+
+          {/* STATIC REFERENCE GRID */}
+          <div className="max-w-7xl mx-auto px-8 py-16">
+            <h3 className="font-archivo text-2xl md:text-3xl uppercase mb-8 text-stroke-white text-root-bg leading-none">CORE ARCHITECTURE / SKILLS LOG</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {[
+                { cat: 'Languages', items: 'TypeScript, JavaScript, Python, SQL' },
+                { cat: 'Frontend', items: 'React, Next.js, Tailwind, HTML/CSS' },
+                { cat: 'Backend', items: 'Node.js, Express.js, FastAPI, Django' },
+                { cat: 'Databases', items: 'PostgreSQL, MongoDB, MySQL, Redis' },
+                { cat: 'Infrastructure', items: 'Docker, AWS, Azure, CI/CD' },
+                { cat: 'Web3 & Real-time', items: 'WebSockets, Solana, CLOB API' },
+                { cat: 'Enterprise', items: 'SharePoint, React SPFx, OpenCV' },
+                { cat: 'Tools', items: 'Git, GitHub Actions, Vercel' }
+              ].map((group, idx) => (
+                <div key={idx} className="border-4 border-brand p-4 bg-root-bg group transition-all duration-200 hover:bg-brand hover:text-root-bg hover:-translate-y-1 hover:shadow-[4px_4px_0_theme(colors.root.text)]">
+                  <div className="font-archivo text-lg mb-2 uppercase border-b-2 border-brand/50 group-hover:border-root-bg/50 pb-2">{group.cat}</div>
+                  <div className="text-sm font-medium opacity-90">{group.items}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* ABOUT SECTION */}
         <section id="about" className="py-24 border-b-4 border-brand">
