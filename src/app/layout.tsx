@@ -1,8 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Archivo_Black, Chivo_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const archivoBlack = Archivo_Black({ 
+  weight: '400',
+  subsets: ["latin"],
+  variable: '--font-archivo',
+});
+
+const chivoMono = Chivo_Mono({ 
+  subsets: ["latin"],
+  variable: '--font-chivo',
+});
 
 export const metadata: Metadata = {
   title: "Akinwale Jude O. | Senior Software Engineer",
@@ -16,7 +25,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${archivoBlack.variable} ${chivoMono.variable}`}>
+        <div className="grain-overlay"></div>
         {children}
       </body>
     </html>

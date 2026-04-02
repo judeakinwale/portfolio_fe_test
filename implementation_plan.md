@@ -1,91 +1,67 @@
-# Next.js Portfolio Implementation Plan
+# Frontend Design Improvement Plan
 
-This document outlines the architecture, design, and content strategy for building Akinwale Jude O.'s portfolio website using Next.js. The site will translate the provided resume data into a modern, dynamic, and visually appealing web experience.
+Based on the `frontend-design` skill guidelines, the current design is functional but leans towards generic AI aesthetics (Inter font, standard CSS glassmorphism, soft rounded corners, and a standard centered layout). To elevate this to a production-grade, memorable portfolio, we will transition to a **Refined Industrial Brutalism** aesthetic.
 
-## Goal
-To build a premium, responsive portfolio website that highlights Akinwale's experience as a Senior Software Engineer, utilizing rich aesthetics (dark mode, glassmorphism, micro-animations) appropriate for a modern full-stack/web3 developer.
-
-## Content Strategy (Using Resume Data & Filling Gaps)
-
-### 1. Hero Section
-* **Data:** Name (Akinwale Jude O.), Titles (Senior Software Engineer, Full-Stack Developer, Tech Lead).
-* **Missing Items to Fill:** A professional headshot placeholder, a catchy headline/greeting, and quick call-to-action buttons (e.g., "View Projects", "Download Resume").
-
-### 2. About Me
-* **Data:** Expanded from the Professional Summary. Highlighting 5 years of experience, expertise in high-performance real-time systems (crypto trading, prediction markets), and leadership.
-* **Missing Items to Fill:** Personal touch elements (e.g., hobbies or what drives his passion for software engineering) to make it more engaging.
-
-### 3. Skills Matrix
-* **Data:** 
-  * Languages: TypeScript, JavaScript, Python
-  * Frameworks: React, Next.js, Express.js, Django, FastAPI, React SPFx
-  * Databases: PostgreSQL, MongoDB, MySQL, SQLite
-  * Domain-specific: WebSockets, Turnkey SDK, Polymarket SDKs, Solana, SharePoint
-  * Cloud/DevOps: Docker, GitHub Actions, Azure, AWS, Vercel
-* **Missing Items to Fill:** Visual representation of proficiency levels or logical groupings into animated cards/badges.
-
-### 4. Experience Timeline
-* **Data:**
-  * Senior Software Engineer @ Homepage (Sep 2025 – Present)
-  * Tech Lead / Full-Stack Developer @ Lotus Beta Analytics (May 2021 – Sep 2025)
-* **Missing Items to Fill:** Detailed bullet points for accomplishments at each role (e.g., metrics on performance improved, team size managed, specific features shipped). I will draft placeholder accomplishments based on industry standards for these roles.
-
-### 5. Projects Showcase
-* **Data:** 
-  * Prysm.trade 
-  * Electronic Testing System
-  * Attendance Management System
-* **Missing Items to Fill:** Because the resume only lists titles, we need to invent the "obvious missing items":
-  * **Short descriptions** for what these platforms do.
-  * **Tech stacks** used for each (deduced from the core skills).
-  * **Project thumbnails/images** (we can use AI generated placeholders).
-  * **Links** to live sites or GitHub repositories.
-
-### 6. Education & Certifications
-* **Data:** B.Sc. Applied Physics (University of Lagos), Microsoft Certified: Azure Developer Associate (AZ-204).
-
-### 7. Contact Section
-* **Data:** Email (judeakinwale@gmail.com), Phone (+234 906 443 0102), GitHub (github.com/judeakinwale).
-* **Missing Items to Fill:** A functional contact form, LinkedIn profile link (standard for portfolios), and a stylized footer.
-
----
-
-## Technical Stack & Design System
-
-* **Framework:** Next.js (App Router)
-* **Styling:** Vanilla CSS (or CSS Modules) focusing on modern aesthetics (dark mode by default, vibrant accent colors like neon cyan/purple for crypto/web3 vibes, glassmorphism for cards).
-* **Typography:** Modern sans-serif (e.g., 'Inter' or 'Outfit').
-* **Animations:** CSS transitions and keyframes for smooth scrolling, hover effects, and entrance animations.
-* **Icons:** Lucide-react or similar lightweight SVG icons.
-
-> [!NOTE] 
-> Because the user request specified 'filling in the obvious missing items', I will generate rich placeholder text for the project descriptions and experience bullet points that fit the context of a Senior Software Engineer. The user can easily swap these out later if they have specific details.
-
----
-
-## Proposed Technical Implementation Phases
-
-### Phase 1: Project Setup & Foundation
-* Initialize `npx create-next-app` (using standard App Router, no Tailwind as per web app development guidelines, opting for Vanilla CSS).
-* Configure `globals.css` with CSS variables for colors, typography, and spacing (Dark theme).
-
-### Phase 2: Component Development
-* Create reusable UI components: `Button`, `SectionHeading`, `SkillBadge`, `ProjectCard`, `ExperienceTimeline`.
-
-### Phase 3: Page Assembly
-* Build the single-page scrolling layout (`page.tsx`) integrating the Hero, About, Skills, Experience, Projects, and Contact components.
-* Implement smooth scrolling navigation and a sticky glass-effect navbar.
-
-### Phase 4: Polish & Interactivity
-* Add micro-animations (hover scaling, fade-ins via Intersection Observer or simple CSS animations).
-* Ensure strict responsive design for mobile and tablet views.
-* SEO optimization (Meta tags, semantic HTML).
-
----
+This approach fits a Senior Software Engineer with deep expertise in high-performance backends and crypto/Web3 by projecting technical precision, raw performance, and bold confidence.
 
 ## User Review Required
 
 > [!IMPORTANT]
-> Please review the plan above. Are there any specific colour schemes, missing links (e.g., LinkedIn, X/Twitter), or specific project descriptions you'd like me to use instead of generating plausible placeholders?
+> Please review the aesthetic direction outlined below. Do you approve of this bolder, sharper "Industrial Brutalist" approach, or would you prefer a different direction (e.g., Luxury Minimalist, Retro-Futuristic)? 
 
-Do you approve of this implementation plan to start building the application?
+## Proposed Aesthetic Direction: Refined Industrial Brutalism
+
+* **Tone & Vibe**: Utilitarian, sharp, raw, and highly technical. No soft shadows; instead, we use stark contrasts, hard borders, and dense typography.
+* **Typography**:
+  * Removing the overused `Inter` font.
+  * **Headings**: `Archivo Black` (massive, heavy, impactful).
+  * **Body/Details**: `Chivo Mono` or `JetBrains Mono` (gives a code-like, technical precision to all the text).
+* **Color Palette** (Preserving your requests but shifting execution):
+  * Background: Stark absolute black (`#09090b`).
+  * Text: High-contrast white (`#fafafa`).
+  * Accent: Bright warning orange (`#fb923c`) used aggressively for solid block backgrounds, thick borders, and hover states.
+* **Layout & Composition**:
+  * Moving away from standard centered flex columns.
+  * Introducing asymmetry, visible grid-lines, and harsh straight edges (`border-radius: 0`).
+  * Skills will be displayed in a dense, ticker-tape marquee or a rigid grid with thick borders.
+* **Visual Details**:
+  * **Backgrounds**: A subtle CRT scanline or technical blueprint grid background instead of a soft glowing orb.
+  * **Interactions**: Ditching smooth bounces for instantaneous, high-impact hover effects (e.g., color inversion on hover).
+  * **Atmosphere**: CSS noise/grain overlay spanning the entire viewport to give a tactile, raw feel.
+
+## Proposed Changes
+
+### Global Layout & Configuration
+
+#### [MODIFY] [layout.tsx](file:///c:/Users/jude/Desktop/Projects/portfolio_fe_vibe/src/app/layout.tsx)
+- Update Google Fonts imports (`Archivo_Black` and `Chivo_Mono`).
+- Apply the body font variable.
+- Inject a noise/grain overlay element wrapping the application.
+
+#### [MODIFY] [globals.css](file:///c:/Users/jude/Desktop/Projects/portfolio_fe_vibe/src/app/globals.css)
+- Completely restructure tokens for the Brutalist aesthetic.
+- Replace soft box-shadows and glassmorphism with harsh solid borders (`border: 2px solid var(--accent)`).
+- Add CSS patterns (subtle grid background) and marquee animations.
+- Implement stark hover inversions (black text on orange background).
+
+### Component Refactoring
+
+#### [MODIFY] [page.tsx](file:///c:/Users/jude/Desktop/Projects/portfolio_fe_vibe/src/app/page.tsx)
+- Refactor the markup to support the new asymmetrical layout.
+- **Hero**: Shift text to be massive and left-aligned with a harsh geometric container. 
+- **Skills**: Transform the pills into a raw, terminal-like output format or an animated continuous marquee.
+- **Experience**: Replace the soft dots with hard squares and thick connecting beams.
+- **Projects**: Large, bold cards with prominent numbering and harsh solid orange borders on hover.
+
+## Open Questions
+
+> [!WARNING]
+> 1. Are you comfortable with removing all rounded corners (`border-radius: 0`) in favor of sharp, industrial edges?
+> 2. The new fonts (`Archivo Black` and `Chivo Mono`) are very opinionated. Does a "technical/code" vibe fit your personal brand?
+
+## Verification Plan
+
+### Manual Verification
+- Review the application locally via `npm run dev` to ensure no layout breakages on mobile devices.
+- Verify that the custom fonts load correctly and the noise/grid background doesn't negatively impact scroll performance.
+- Check that all hover interactions feel snappy and align with the brutalist vision.
