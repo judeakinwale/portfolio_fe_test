@@ -1,21 +1,28 @@
 import type { Metadata } from "next";
-import { Archivo_Black, Chivo_Mono } from "next/font/google";
+import { Archivo_Black, Chivo_Mono, Open_Sans } from "next/font/google";
 import "./globals.css";
+import TopNav from "@/components/layout/TopNav";
 
-const archivoBlack = Archivo_Black({ 
-  weight: '400',
+const archivoBlack = Archivo_Black({
+  weight: "400",
   subsets: ["latin"],
-  variable: '--font-archivo',
+  variable: "--font-archivo",
 });
 
-const chivoMono = Chivo_Mono({ 
+const chivoMono = Chivo_Mono({
   subsets: ["latin"],
-  variable: '--font-chivo',
+  variable: "--font-chivo",
+});
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  variable: "--font-opensans",
 });
 
 export const metadata: Metadata = {
   title: "Akinwale Jude O. | Senior Software Engineer",
-  description: "Portfolio of Akinwale Jude O., Senior Software Engineer and Tech Lead.",
+  description:
+    "Portfolio of Akinwale Jude O., Senior Software Engineer and Tech Lead.",
 };
 
 export default function RootLayout({
@@ -23,11 +30,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  console.log({ archivoBlack, chivoMono, openSans });
+
   return (
     <html lang="en">
-      <body className={`${archivoBlack.variable} ${chivoMono.variable}`}>
-        <div className="grain-overlay"></div>
-        {children}
+      <body
+        className={`${archivoBlack.variable} ${chivoMono.variable} ${openSans.variable} antialiased`}
+      >
+        <div className="fixed inset-0 z-50 pointer-events-none grain-overlay"></div>
+        <div className="text-accent selection:bg-accent selection:text-background">
+          <TopNav />
+          <main>{children}</main>
+        </div>
       </body>
     </html>
   );
