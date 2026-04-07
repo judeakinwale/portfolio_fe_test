@@ -7,26 +7,18 @@ const Hero = () => {
   const lastName = "Akinwale";
   const initial = "O.";
 
-  // const tagLine = "Senior Software Engineer / Tech Lead";
   const tagLine = "Software Engineer / Tech Lead";
   const yearsOfExperience = "05+";
 
   const description = `
-  I build high performance real-time systems, fintech and crypto platforms. 
+  I build high performance real-time systems, fintech platforms for the web. 
   Perfecting process automation and enterprise applications.
   `;
-  // // High-performance real-time systems. Crypto trading platforms.
-  // // Enterprise applications. I build robust backends and dynamic
-  // // frontends that don't compromise on speed or bold aesthetics.
 
   return (
     <section id="hero" className="min-h-fit flex items-end py-24">
       <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8 mx-auto px-8">
         <div className="flex flex-col gap-4 animate-fade-up">
-          {/* <span className="inline-block bg-accent text-background px-4 py-2 font-bold mb-8 uppercase text-sm tracking-wider shadow-[4px_4px_0_var(--color-accent)] transition-transform hover:-translate-y-1 hover:translate-x-1 hover:shadow-none duration-150">
-            System Status: Online
-          </span> */}
-
           {/* terminal blinker */}
           <div className="flex items-center gap-4 py-4">
             <TerminalStartIcon className="h-8 text-accent" />
@@ -68,7 +60,7 @@ const Hero = () => {
               {yearsOfExperience}
             </h3>
             <p className="text-sm text-foreground/80 uppercase font-bold tracking-widest">
-              Years of Professional
+              Years of Production
               <br />
               Experience
             </p>

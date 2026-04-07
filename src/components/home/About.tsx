@@ -16,10 +16,9 @@ const About = () => {
         trading, prediction markets, and auction bidding.
       </p>
       <p>
-        Beyond writing high-performance WebSockets and robust APIs, I excel at
-        technical leadership, mentoring teams, and applying critical thinking to
-        architecture design. My goal is to always deliver scalable and secure
-        applications using Agile methodology, with an undeniable aesthetic edge.
+        I excel at technical leadership, mentoring teams, and applying critical
+        thinking to architecture design and development. My goal is to always
+        deliver scalable and secure applications.
       </p>
     </>
   );

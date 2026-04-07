@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Archivo_Black, Chivo_Mono, Open_Sans } from "next/font/google";
 import "./globals.css";
 import TopNav from "@/components/layout/TopNav";
+import Footer from "@/components/layout/Footer";
 
 const archivoBlack = Archivo_Black({
   weight: "400",
@@ -41,6 +42,7 @@ export default function RootLayout({
         <div className="text-accent selection:bg-accent selection:text-background">
           <TopNav />
           <main>{children}</main>
+          <Footer />
         </div>
       </body>
     </html>
