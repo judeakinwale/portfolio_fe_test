@@ -1,6 +1,7 @@
 import { UserSkills } from "@/types/user";
 import React, { useMemo } from "react";
 import TerminalStartIcon from "../common/ TerminalStartIcon";
+import TitleText from "../common/TitleText";
 
 interface SkillProps {
   detailedSkills: UserSkills[];
@@ -17,8 +18,6 @@ const Skills: React.FC<SkillProps> = ({ detailedSkills = [] }) => {
     () => Object.groupBy(detailedSkills, (skill) => skill.category),
     [detailedSkills]
   );
-
-  console.log({ groupedSkills });
 
   return (
     <section
@@ -61,9 +60,7 @@ const Skills: React.FC<SkillProps> = ({ detailedSkills = [] }) => {
       <div className="max-w-7xl grid gap-8 mx-auto px-8 py-24">
         <div className="flex items-center gap-4">
           <TerminalStartIcon />
-          <h1 className="font-archivo text-background text-[clamp(3rem,6vw,5rem)] uppercase text-stroke-white leading-none">
-            Core Skills
-          </h1>
+          <TitleText text="Core Skills" />
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {Object.entries(groupedSkills).map(([category, skills], idx) => (
