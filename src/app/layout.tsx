@@ -21,9 +21,9 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Akinwale Jude O. | Senior Software Engineer",
+  title: "Akinwale Jude O. | Software Engineer",
   description:
-    "Portfolio of Akinwale Jude O., Senior Software Engineer and Tech Lead.",
+    "Portfolio of Akinwale Jude O., Software Engineer and Tech Lead.",
 };
 
 export default function RootLayout({

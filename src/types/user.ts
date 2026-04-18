@@ -2,6 +2,8 @@ export interface UserSkills {
   name: string;
   category: string;
   experience?: string;
+  featured?: boolean;
+  marqueeOrder?: number;
 }
 
 export interface UserExperience {
@@ -33,6 +35,7 @@ export interface UserContact {
   Twitter?: string;
   Phone?: string;
   Whatsapp?: string;
+  Resume?: string;
 }
 
 export interface UserInfo {

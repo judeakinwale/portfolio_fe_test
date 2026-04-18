@@ -3,18 +3,20 @@ import TerminalStartIcon from "../common/ TerminalStartIcon";
 import TitleText from "../common/TitleText";
 import Button from "../common/Button";
 import { UserContact } from "@/types/user";
+import { Download } from "lucide-react";
 
 interface ContactProps {
   contactInfo?: UserContact;
 }
 const Contact: React.FC<ContactProps> = ({ contactInfo = {} }) => {
   const email = contactInfo?.Email;
+  const resume = contactInfo?.Resume;
   const contactLinks = useMemo(
     () =>
       Object.entries(contactInfo)
         .filter(
           ([key, value]) =>
-            !key?.toLowerCase()?.includes("email") && !!value && value !== "#"
+            !key?.toLowerCase()?.includes("email") && !!value && value !== "#",
         )
         ?.map(([key, value]) => {
           return {
@@ -22,8 +24,12 @@ const Contact: React.FC<ContactProps> = ({ contactInfo = {} }) => {
             href: value,
           };
         }),
-    [contactInfo]
+    [contactInfo],
   );
+
+  const header = "Ready to Deploy";
+  const description =
+    "Whether you’re dealing with high-frequency trades or complex enterprise architecture, I can help build systems that scale.";
 
   return (
     <section id="contact" className="py-24">
@@ -35,19 +41,28 @@ const Contact: React.FC<ContactProps> = ({ contactInfo = {} }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 bg-background border-4 border-accent">
           <div className="p-8 md:p-16 border-b-4 md:border-b-0 md:border-r-4 border-accent">
             <h3 className="text-[clamp(3rem,6vw,4rem)] font-archivo uppercase mb-8 leading-none">
-              Ready to Deploy.
+              {header}
             </h3>
-            <p className="text-xl mb-12 text-foreground/80">
-              Whether you’re dealing with high-frequency trades or complex
-              enterprise architecture, I can help build systems that scale.
-            </p>
-            <Button
-              href={email ? `mailto:${email}` : "#"}
-              variant="primary"
-              className={!email ? "cursor-not-allowed opacity-50" : ""}
-            >
-              Send Email
-            </Button>
+            <p className="text-xl mb-12 text-foreground/80">{description}</p>
+            <div className="flex items-start gap-6">
+              <Button
+                href={email ? `mailto:${email}` : "#"}
+                variant="primary"
+                className={!email ? "cursor-not-allowed opacity-50" : ""}
+              >
+                Send Email
+              </Button>
+              {resume ||
+                (true && (
+                  <Button
+                    href=""
+                    variant="secondary"
+                    className="flex items-center gap-2"
+                  >
+                    <Download /> Resume
+                  </Button>
+                ))}
+            </div>
           </div>
           <div className="flex flex-col">
             <div className="flex-grow flex flex-col font-archivo text-3xl md:text-4xl lg:text-5xl">

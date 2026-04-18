@@ -11,7 +11,7 @@ const Hero = () => {
   const yearsOfExperience = "05+";
 
   const description = `
-  I build high performance real-time systems, fintech platforms for the web. 
+  I build high performance real-time systems for the web. 
   Perfecting process automation and enterprise applications.
   `;
 

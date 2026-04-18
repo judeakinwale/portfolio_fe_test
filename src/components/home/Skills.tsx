@@ -2,6 +2,7 @@ import { UserSkills } from "@/types/user";
 import React, { useMemo } from "react";
 import TerminalStartIcon from "../common/ TerminalStartIcon";
 import TitleText from "../common/TitleText";
+import { cn } from "@/lib/utils";
 
 interface SkillProps {
   detailedSkills: UserSkills[];
@@ -9,16 +10,20 @@ interface SkillProps {
 
 const Skills: React.FC<SkillProps> = ({ detailedSkills = [] }) => {
   const marqueeSkills = useMemo(() => {
-    const skillNames = detailedSkills.map((skill) => skill.name);
+    const skillNames = detailedSkills
+      .filter((s) => typeof s.marqueeOrder === "number")
+      .sort((a, b) => a.marqueeOrder! - b.marqueeOrder!)
+      .map((skill) => skill.name);
     skillNames.concat(skillNames);
-    return skillNames;
+    return [...skillNames, ...skillNames, ...skillNames];
   }, [detailedSkills]);
 
   const groupedSkills = useMemo(
     () => Object.groupBy(detailedSkills, (skill) => skill.category),
-    [detailedSkills]
+    [detailedSkills],
   );
 
+  // TODO: Replace static grid with individual skill cards with the logo and text, ordered using the order in detailedSkills
   return (
     <section
       id="skills"
@@ -71,8 +76,15 @@ const Skills: React.FC<SkillProps> = ({ detailedSkills = [] }) => {
               <div className="mb-2 pb-2 font-archivo text-lg uppercase border-b-2 border-accent/50 group-hover:border-background/50">
                 {category}
               </div>
-              <div className="text-sm font-medium opacity-90">
-                {skills?.map((skill) => skill.name)?.join(", ")}
+              <div className="flex flex-wrap gap-1 text-sm font-medium opacity-90">
+                {skills?.map((skill) => (
+                  <React.Fragment key={skill.name}>
+                    <span className={cn(skill.featured && "font-black")}>
+                      {skill.name}
+                    </span>
+                    <span className="last:hidden">,</span>
+                  </React.Fragment>
+                ))}
               </div>
             </div>
           ))}

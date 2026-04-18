@@ -12,8 +12,9 @@ const About = () => {
         </strong>
         &nbsp; with 5+ years of professional experience building
         production-grade full-stack web applications. My passion lies in
-        developing data-heavy real-time platforms, including systems for crypto
-        trading, prediction markets, and auction bidding.
+        developing data-heavy real-time platforms, process automation systems as well as responsive and aesthetic web applications.
+        {/* , including systems for crypto
+        trading, prediction markets, and auction bidding. */}
       </p>
       <p>
         I excel at technical leadership, mentoring teams, and applying critical
