@@ -44,7 +44,7 @@ const Contact: React.FC<ContactProps> = ({ contactInfo = {} }) => {
               {header}
             </h3>
             <p className="text-xl mb-12 text-foreground/80">{description}</p>
-            <div className="flex items-start gap-6">
+            <div className="flex items-start gap-6 flex-wrap">
               <Button
                 href={email ? `mailto:${email}` : "#"}
                 variant="primary"

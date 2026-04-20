@@ -45,7 +45,7 @@ const Experience: React.FC<ExperienceProps> = ({ workExperience = [] }) => {
   return (
     <section id="experience" className="py-24 border-b-4 border-accent">
       <div className="max-w-7xl grid gap-8 mx-auto px-8">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center flex-wrap gap-4">
           <TerminalStartIcon />
           <TitleText text="Experience" />
         </div>
