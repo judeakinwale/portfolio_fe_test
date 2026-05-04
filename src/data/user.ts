@@ -3,24 +3,29 @@ import { UserInfo } from "@/types/user";
 
 const detailedSkills = [
   { name: "TypeScript", category: "Languages", featured: true },
-  { name: "Python", category: "Languages", featured: true },
+  // { name: "Python", category: "Languages", featured: true },
   { name: "JavaScript", category: "Languages", featured: false },
-
-  { name: "Express.js", category: "Backend", featured: true, marqueeOrder: 1 },
-  { name: "FastAPI", category: "Backend", featured: true, marqueeOrder: 3 },
-  { name: "Django", category: "Backend", featured: true, marqueeOrder: 5 },
-  { name: "Node.js", category: "Backend", featured: true },
-
+  
   { name: "React.js", category: "Frontend", featured: true, marqueeOrder: 0 },
-  { name: "Next.js", category: "Frontend", featured: true, marqueeOrder: 4 },
+  { name: "Next.js", category: "Frontend", featured: true, marqueeOrder: 1 },
   { name: "Tailwindcss", category: "Frontend", featured: false },
   { name: "HTML/CSS", category: "Frontend", featured: false },
-
+  
+  { name: "Express.js", category: "Backend", featured: true, marqueeOrder: 2 },
+  // { name: "FastAPI", category: "Backend", featured: true, marqueeOrder: 3 },
+  // { name: "Django", category: "Backend", featured: true, marqueeOrder: 5 },
+  { name: "Node.js", category: "Backend", featured: true },
+  
   { name: "MongoDB", category: "Databases", featured: false },
   { name: "PostgreSQL", category: "Databases", featured: false },
   { name: "Redis", category: "Databases", featured: false },
-  { name: "MySQL", category: "Databases", featured: false },
-  { name: "SQLite3 ", category: "Databases", featured: false },
+  // { name: "MySQL", category: "Databases", featured: false },
+  // { name: "SQLite3 ", category: "Databases", featured: false },
+
+  { name: "WebSockets", category: "Real-time & Web3", featured: false, marqueeOrder: 6 },
+  { name: "Turnkey", category: "Real-time & Web3", featured: false, marqueeOrder: 7 },
+  { name: "Polymarket", category: "Real-time & Web3", featured: false },
+  { name: "Solana", category: "Real-time & Web3", featured: false },
 
   { name: "Docker", category: "Infrastructure", featured: false },
   { name: "Azure", category: "Infrastructure", featured: false },
@@ -28,13 +33,8 @@ const detailedSkills = [
   { name: "Vercel", category: "Infrastructure", featured: false },
   { name: "CI/CD", category: "Infrastructure", featured: false },
 
-  { name: "WebSockets", category: "Real-time & Web3", featured: false },
-  { name: "Turnkey", category: "Real-time & Web3", featured: false },
-  { name: "Polymarket", category: "Real-time & Web3", featured: false },
-  { name: "Solana", category: "Real-time & Web3", featured: false },
-
-  { name: "SPFx", category: "Enterprise", featured: true, marqueeOrder: 2 },
-  { name: "SharePoint", category: "Enterprise", featured: false },
+  { name: "SPFx", category: "Enterprise", featured: true, marqueeOrder: 4 },
+  { name: "SharePoint", category: "Enterprise", featured: false},
 
   { name: "Git", category: "Tools", featured: false },
   { name: "OpenCV", category: "Tools", featured: false },
