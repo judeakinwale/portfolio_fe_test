@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Hero from "@/components/home/Hero";
 import Skills from "@/components/home/Skills";
@@ -6,7 +7,9 @@ import Experience from "@/components/home/Experience";
 import Projects from "@/components/home/Projects";
 import Contact from "@/components/home/Contact";
 import { userInfo } from "@/data/user";
+import { useLenisScroll as lenisScroll } from "@/lib/scroll";
 
+lenisScroll();
 
 export default function Home() {
   return (
