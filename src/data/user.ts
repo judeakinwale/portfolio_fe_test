@@ -203,6 +203,36 @@ const workExperience = [
 const projects = [
   {
     index: 1,
+    title: "DMS with RAG",
+    role: "Lead Developer",
+    description: `
+    Enterprise Document management system (DMS) including retrieval-augmented generation (RAG) capabilities with semantic search and vector indexing to deliver fast, accurate answers from thousands of documents.
+    Integrates with Sharepoint and other storage solutions.`,
+    technologies: [
+      // "Python",
+      "FastAPI",
+      "React.js",
+      "PostgreSQL",
+      "Qdrant",
+      "OpenAI API",
+      "Docker",
+      "Kafka",
+      "SharePoint",
+      // "SharePoint Document Library",
+      "Microservices",
+      "Redis",
+      "Azure VM",
+    ],
+    responsibilities: [
+      "Architected and developed a scalable RAG workflow using microservices architecture for document ingestion, indexing, processing and retrieval.",
+      "Built a DMS for SharePoint Document Libraries, with AI-powered chat for document search and answering questions.",
+      "Implemented semantic search and vector indexing using Qdrant for accurate document retrieval.",
+      "Optimized the RAG workflow with asynchronous events using Kafka, caching using Redis and parallel processing using asyncio in Python.",
+    ],
+    isActive: true,
+  },
+  {
+    index: 2,
     title: "Prysm.Trade",
     role: "Full-Stack Developer",
     description: `
@@ -216,7 +246,7 @@ const projects = [
       "Polymarket",
       "PostgreSQL",
       "WebSockets",
-      // "MongoDB",
+      "MongoDB",
       "Redis",
       "Docker",
     ],
@@ -229,7 +259,7 @@ const projects = [
     isActive: true,
   },
   {
-    index: 2,
+    index: 3,
     title: "Lulu Africa",
     role: "Technical Lead",
     description: `
@@ -240,7 +270,7 @@ const projects = [
       "React Native",
       "Express.js",
       "React.js",
-      "Open AI",
+      "Open AI API",
       "Azure AI Foundry",
       "Azure Speech Services",
       "MongoDB",
@@ -258,7 +288,7 @@ const projects = [
     isActive: true,
   },
   {
-    index: 3,
+    index: 4,
     title: "E-Test",
     role: "Full-Stack Developer",
     description: `
@@ -285,7 +315,7 @@ const projects = [
     isActive: true,
   },
   {
-    index: 4,
+    index: 5,
     title: "Attendance MGT",
     role: "Backend Developer / Technical Lead",
     description: `
