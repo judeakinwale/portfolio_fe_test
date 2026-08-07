@@ -14,9 +14,9 @@ const navItems = [
 const TopNav = () => {
   return (
     <nav className="fixed top-0 z-10 w-full flex justify-between items-stretch bg-background border-b-4 border-accent">
-      <div className="px-8 py-4 text-2xl uppercase font-archivo leading-none tracking-tight border-r-4 border-accent">
+      <a className="px-8 py-4 text-2xl uppercase font-archivo leading-none tracking-tight border-r-4 border-accent" href="#hero">
         {username}
-      </div>
+      </a>
       <div className="hidden md:flex">
         {navItems.map(({ name, href }) => (
           <a

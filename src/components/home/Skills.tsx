@@ -79,7 +79,7 @@ const Skills: React.FC<SkillProps> = ({ detailedSkills = [] }) => {
               <div className="flex flex-wrap gap-1 text-sm font-medium opacity-90">
                 {skills?.map((skill) => (
                   <React.Fragment key={skill.name}>
-                    <span className={cn(skill.featured && "font-black")}>
+                    <span className={cn(skill.featured && "font-black text-white/90")}>
                       {skill.name}
                     </span>
                     <span className="last:hidden">,</span>

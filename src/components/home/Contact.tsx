@@ -10,22 +10,21 @@ interface ContactProps {
 }
 const Contact: React.FC<ContactProps> = ({ contactInfo = {} }) => {
   const email = contactInfo?.Email;
-  const resume = contactInfo?.Resume;
-  const contactLinks = useMemo(
-    () =>
-      Object.entries(contactInfo)
-        .filter(
-          ([key, value]) =>
-            !key?.toLowerCase()?.includes("email") && !!value && value !== "#",
-        )
-        ?.map(([key, value]) => {
-          return {
-            label: key,
-            href: value,
-          };
-        }),
-    [contactInfo],
-  );
+  const resumeUrl = process.env.NEXT_RESUME_URL || contactInfo?.Resume;
+  const contactLinks = useMemo(() => {
+    const excludedKeys = ["Email", "Resume"].map((key) => key.toLowerCase());
+    return Object.entries(contactInfo)
+      .filter(
+        ([key, value]) =>
+          !excludedKeys.includes(key?.toLowerCase()) && !!value && value !== "#",
+      )
+      ?.map(([key, value]) => {
+        return {
+          label: key,
+          href: value,
+        };
+      });
+  }, [contactInfo]);
 
   const header = "Ready to Deploy";
   const description =
@@ -52,16 +51,16 @@ const Contact: React.FC<ContactProps> = ({ contactInfo = {} }) => {
               >
                 Send Email
               </Button>
-              {resume ||
-                (true && (
-                  <Button
-                    href=""
-                    variant="secondary"
-                    className="flex items-center gap-2"
-                  >
-                    <Download /> Resume
-                  </Button>
-                ))}
+              {!!resumeUrl && (
+                <Button
+                  href={resumeUrl}
+                  variant="secondary"
+                  className="flex items-center gap-2"
+                  download
+                >
+                  <Download /> Resume
+                </Button>
+              )}
             </div>
           </div>
           <div className="flex flex-col">

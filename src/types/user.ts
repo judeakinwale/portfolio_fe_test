@@ -39,7 +39,10 @@ export interface UserContact {
 }
 
 export interface UserInfo {
-  name: string;
+  name: string; // full name
+  firstName: string;
+  lastName: string;
+  initial?: string;
   email: string;
   title: string;
   description?: string;

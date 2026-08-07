@@ -1,19 +1,21 @@
 import React from "react";
 import TerminalStartIcon from "@/components/common/ TerminalStartIcon";
 import Button from "@/components/common/Button";
+import { UserInfo } from "@/types/user";
 
-const Hero = () => {
-  const firstName = "Jude";
-  const lastName = "Akinwale";
-  const initial = "O.";
+interface HeroProps {
+  userInfo: UserInfo;
+}
 
-  const tagLine = "Software Engineer / Tech Lead";
-  const yearsOfExperience = "05+";
-
-  const description = `
-  I build high performance real-time systems for the web. 
-  Perfecting process automation and enterprise applications.
-  `;
+const Hero: React.FC<HeroProps> = ({ userInfo }) => {
+  const {
+    firstName,
+    lastName,
+    initial,
+    title,
+    yearsOfExperience,
+    description,
+  } = userInfo;
 
   return (
     <section id="hero" className="min-h-fit flex items-end py-24">
@@ -38,13 +40,13 @@ const Hero = () => {
           </h1>
           <div className="flex flex-col gap-8">
             <h2 className="text-[clamp(1.5rem,3vw,2.5rem)] text-accent font-bold uppercase tracking-tight">
-              {tagLine}
+              {title}
             </h2>
             <p className="max-w-2xl pl-8 text-foreground/90 text-lg border-l-4 border-accent">
               {description}
             </p>
             <div className="flex gap-4 flex-wrap">
-              <Button href="#work" variant="primary">
+              <Button href="#projects" variant="primary">
                 View Projects
               </Button>
               <Button href="#contact" variant="secondary">

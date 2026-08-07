@@ -11,11 +11,11 @@ import { userInfo } from "@/data/user";
 export default function Home() {
   return (
     <div className="">
-      <Hero />
+      <Hero userInfo={userInfo} />
 
       <Skills detailedSkills={userInfo.skills} />
 
-      <About />
+      <About detailedDescription={userInfo.detailedDescription} />
 
       <Experience workExperience={userInfo.workExperience} />
 

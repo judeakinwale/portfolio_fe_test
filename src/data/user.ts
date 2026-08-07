@@ -1,52 +1,75 @@
 import { UserInfo as SysUserInfo } from "os";
 import { UserInfo } from "@/types/user";
+import React from "react";
 
 const detailedSkills = [
   { name: "TypeScript", category: "Languages", featured: true },
-  // { name: "Python", category: "Languages", featured: true },
+  { name: "Python", category: "Languages", featured: true },
   { name: "JavaScript", category: "Languages", featured: false },
-  
-  { name: "React.js", category: "Frontend", featured: true, marqueeOrder: 0 },
+
+  { name: "React.js", category: "Frontend", featured: true, marqueeOrder: 4 },
   { name: "Next.js", category: "Frontend", featured: true, marqueeOrder: 1 },
   { name: "Tailwindcss", category: "Frontend", featured: false },
   { name: "HTML/CSS", category: "Frontend", featured: false },
-  
-  { name: "Express.js", category: "Backend", featured: true, marqueeOrder: 2 },
-  // { name: "FastAPI", category: "Backend", featured: true, marqueeOrder: 3 },
-  // { name: "Django", category: "Backend", featured: true, marqueeOrder: 5 },
-  { name: "Node.js", category: "Backend", featured: true },
-  
-  { name: "MongoDB", category: "Databases", featured: false },
-  { name: "PostgreSQL", category: "Databases", featured: false },
+
+  { name: "Node.js", category: "Backend", featured: true, marqueeOrder: 2 },
+  { name: "Express.js", category: "Backend", featured: true, marqueeOrder: 5 },
+  { name: "Nest.js", category: "Backend", featured: false },
+  { name: "FastAPI", category: "Backend", featured: true, marqueeOrder: 3 },
+  { name: "Django", category: "Backend", featured: false },
+
+  { name: "MongoDB", category: "Databases", featured: true },
+  { name: "PostgreSQL", category: "Databases", featured: true },
   { name: "Redis", category: "Databases", featured: false },
+  { name: "Qdrant", category: "Databases", featured: false },
   // { name: "MySQL", category: "Databases", featured: false },
   // { name: "SQLite3 ", category: "Databases", featured: false },
 
-  { name: "WebSockets", category: "Real-time & Web3", featured: false, marqueeOrder: 6 },
-  { name: "Turnkey", category: "Real-time & Web3", featured: false, marqueeOrder: 7 },
-  { name: "Polymarket", category: "Real-time & Web3", featured: false },
-  { name: "Solana", category: "Real-time & Web3", featured: false },
+  {
+    name: "WebSockets",
+    category: "Real-time",
+    featured: false,
+    marqueeOrder: 6,
+  },
+  { name: "Kafka", category: "Real-time", featured: true }, // , marqueeOrder: 996
+  { name: "Redis Streams", category: "Real-time", featured: false },
 
-  { name: "Docker", category: "Infrastructure", featured: false },
-  { name: "Azure", category: "Infrastructure", featured: false },
+  { name: "OpenAI API", category: "AI", featured: true, marqueeOrder: 995 },
+  {
+    name: "Azure AI Foundry",
+    category: "AI",
+    featured: false,
+  },
+  { name: "Azure Speech Services", category: "AI", featured: true },
+  { name: "GitHub Copilot", category: "AI", featured: false },
+  { name: "Cursor", category: "AI", featured: false },
+  { name: "Codex", category: "AI", featured: false },
+
+  { name: "Turnkey", category: "Web3", featured: false, marqueeOrder: 7 },
+  { name: "Polymarket", category: "Web3", featured: true },
+  { name: "Solana", category: "Web3", featured: false },
+
+  { name: "Docker", category: "Infrastructure", featured: true },
+  { name: "Azure", category: "Infrastructure", featured: true },
   { name: "AWS", category: "Infrastructure", featured: false },
   { name: "Vercel", category: "Infrastructure", featured: false },
   { name: "CI/CD", category: "Infrastructure", featured: false },
 
-  { name: "SPFx", category: "Enterprise", featured: true, marqueeOrder: 4 },
-  { name: "SharePoint", category: "Enterprise", featured: false},
+  { name: "SPFx", category: "Enterprise", featured: true, marqueeOrder: 99 },
+  { name: "SharePoint", category: "Enterprise", featured: false },
 
-  { name: "Git", category: "Tools", featured: false },
+  { name: "Git", category: "Tools", featured: true },
   { name: "OpenCV", category: "Tools", featured: false },
-  { name: "GitHub Actions", category: "Tools", featured: false },
+  { name: "GitHub Actions", category: "Tools", featured: true },
 ];
 
 const workExperience = [
   {
+    index: 1,
     isCurrent: true,
     company: "Homepage",
     location: "Dublin (Remote)",
-    role: "Software Engineer",
+    role: "Senior Software Engineer",
     startDate: "Sep 2025",
     endDate: "Present",
     responsibilities: [
@@ -54,19 +77,53 @@ const workExperience = [
       "Implement the back-end order execution service for the prediction market platform using Express.js, implementing trading automation and integrating with Polymarket.",
       "Architect the front-end and back-end services with a focus on performance and reliability.",
     ],
+    isActive: true,
   },
   {
-    isCurrent: true,
+    index: 2,
+    isCurrent: false,
     company: "Lotus Beta Analytics",
     location: "Lagos (Hybrid)",
     role: "Full-Stack Developer / Technical Lead",
     startDate: "May 2021",
     endDate: "Sep 2025",
     responsibilities: [
-      "Built and maintained full-stack applications and SharePoint solutions using Python, TypeScript, JavaScript and SPFx",
+      "Built and maintained applications and SharePoint solutions using Python, TypeScript, JavaScript and SPFx",
       "Optimized database driven applications and process automation solutions, reducing application response times to 1 - 3 seconds.",
       "Led architecture decisions, mentored team members and provided technical guidance throughout the project life cycle.",
     ],
+    isActive: true,
+  },
+  {
+    index: 3,
+    isCurrent: false,
+    company: "TekkSoftware",
+    location: "Lagos (Hybrid)",
+    role: "Python Developer",
+    startDate: "Mar 2019",
+    endDate: "Apr 2021",
+    responsibilities: [
+      "Built and maintained web application backends using Python and Django with Django Rest Framework for REST API",
+      "Created backend services for event management and hotel reservation systems, integrating payment processing while contributing on the front-end.",
+      "Participated in system architecture design and review, working closely with cross-functional teams",
+    ],
+    isActive: true,
+  },
+  {
+    index: 4,
+    isCurrent: false,
+    company: "FoodBank",
+    location: "Lagos (Hybrid)",
+    role: "Wordpress Developer",
+    startDate: "Sep 2018",
+    endDate: "Jan 2019",
+    responsibilities: [
+      // "Built and maintained WordPress websites and plugins using PHP, JavaScript, and various WordPress APIs.",
+      "Built the MVP for FoodBank, an affordable food distribution platform.",
+      "Modified custom themes and templates, optimizing for performance and SEO.",
+      "Participated in hackathons, community events and investor meetings.",
+    ],
+    isActive: true,
   },
 ];
 
@@ -145,38 +202,70 @@ const workExperience = [
 
 const projects = [
   {
+    index: 1,
     title: "Prysm.Trade",
     role: "Full-Stack Developer",
     description: `
     Crypto trading and prediction market platform with real-time data visualization and secure transaction handling. 
     Integrates Turnkey and Polymarket APIs for live data, authentication, and key management.`,
     technologies: [
-      "TypeScript",
+      // "TypeScript",
       "Next.js",
       "Express.js",
       "Turnkey",
       "Polymarket",
       "PostgreSQL",
       "WebSockets",
-      "MongoDB",
+      // "MongoDB",
       "Redis",
       "Docker",
     ],
     responsibilities: [
       "Built the front-end to handle live market and wallet data for tokens on the Solana chain.",
       "Implemented secure authentication, key management and transaction signing using Turnkey.",
-      "Led development of the -Next.js front-end for real-time trading dashboards with fast and responsive data updates",
+      "Led development of the Next.js front-end for real-time trading dashboards with fast and responsive data updates",
       "Built and improved backend services using Express.js, including WebSocket data streaming and Redis caching to reduce latency",
     ],
+    isActive: true,
   },
   {
+    index: 2,
+    title: "Lulu Africa",
+    role: "Technical Lead",
+    description: `
+    A mobile-first language learning platform for African languages, with chat based learning, test generation and grading, speech to text (STT) and text to speech (TTS) capabilities.
+    Integrating Open AI Models, Azure AI Foundry and Azure Speech Services for AI powered features.`,
+    technologies: [
+      // "TypeScript",
+      "React Native",
+      "Express.js",
+      "React.js",
+      "Open AI",
+      "Azure AI Foundry",
+      "Azure Speech Services",
+      "MongoDB",
+      // "Docker",
+      "GitHub Actions",
+      "Azure",
+    ],
+    responsibilities: [
+      "Led the architecture and development a mobile-first language learning platform using React Native, React.js and Express.js, with conversational learning features.",
+      "Implemented conversational learning, test generation and grading, progress tracking, speech transcription and text-to-speech capabilities for interactive learning, using AI..",
+      "Trained a custom AI speech model for the Yoruba language, using Azure speech services, improving pronunciation and transcription accuracy.",
+      "Implemented structured AI responses for progression tracking and test generation, text streaming for near instant chat responses and managed token costs by summarizing chat history and context ",
+      "Deployed and maintained the application on Azure with CI/CD using GitHub Actions and on Expo",
+    ],
+    isActive: true,
+  },
+  {
+    index: 3,
     title: "E-Test",
     role: "Full-Stack Developer",
     description: `
     Electronic testing platform with real-time grading, flexible test setup, and anti-cheating features. 
     Designed to support 2,000+ concurrent users reliably.`,
     technologies: [
-      "TypeScript",
+      // "TypeScript",
       "React.js",
       "Express.js",
       "SPFx",
@@ -184,7 +273,7 @@ const projects = [
       "SharePoint",
       "MongoDB",
       "Docker",
-      "GitHub Actions",
+      // "GitHub Actions",
       "Azure",
     ],
     responsibilities: [
@@ -193,8 +282,10 @@ const projects = [
       "Automated the user onboarding, grading, batching and test scheduling processes, a previously multi-week process",
       "Deployed and maintained the application on Azure with CI/CD using GitHub Actions",
     ],
+    isActive: true,
   },
   {
+    index: 4,
     title: "Attendance MGT",
     role: "Backend Developer / Technical Lead",
     description: `
@@ -217,6 +308,7 @@ const projects = [
       "Implemented geofencing and facial recognition to prevent false attendance records.",
       "Deployed the system on Azure using Docker and automated CI/CD with GitHub Actions",
     ],
+    isActive: true,
   },
 ];
 
@@ -227,16 +319,41 @@ const contactInfo = {
   Twitter: "#",
   Phone: "tel:+2349064430102",
   Whatsapp: "https://wa.me/+2349064430102",
+  Resume: "#",
 };
 
 export const userInfo: UserInfo = {
   name: "Jude Akinwale",
+  firstName: "Jude",
+  lastName: "Akinwale",
+  initial: "O.",
   title: "Software Engineer / Tech Lead",
   email: "judeakinwale@gmail.com",
-  description: "",
-  detailedDescription: "",
-  yearsOfExperience: "05",
-  experienceDescription: "05+ years of production experience",
+  description: `
+  I build high performance real-time systems for the web. 
+  Perfecting process automation and enterprise applications.
+  `,
+  detailedDescription: `
+    <p>
+      I am a&nbsp;
+      <strong class="text-accent font-bold">
+        Senior Software Engineer and Technical Lead
+      </strong>
+      &nbsp; with 7+ years of professional experience building production full-stack
+      web applications. My passion lies in developing data-heavy real-time
+      platforms, process automation systems as well as responsive and aesthetic web
+      applications.
+      <!-- , including systems for crypto
+      trading, prediction markets, and auction bidding. -->
+    </p>
+    <p>
+      I excel at technical leadership, mentoring teams, and applying critical
+      thinking to architecture design and development. My goal is to always deliver
+      scalable and secure applications.
+    </p>
+  `,
+  yearsOfExperience: "07+",
+  experienceDescription: "07+ years of production experience",
   skills: detailedSkills,
   workExperience: workExperience,
   projects: projects,
