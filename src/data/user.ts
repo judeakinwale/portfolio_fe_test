@@ -1,6 +1,4 @@
-import { UserInfo as SysUserInfo } from "os";
-import { UserInfo } from "@/types/user";
-import React from "react";
+import { UserContact, UserInfo } from "@/types/user";
 
 const detailedSkills = [
   { name: "TypeScript", category: "Languages", featured: true },
@@ -342,14 +340,15 @@ const projects = [
   },
 ];
 
-const contactInfo = {
+const contactInfo: UserContact = {
   Email: "judeakinwale@gmail.com",
   GitHub: "https://github.com/judeakinwale",
   LinkedIn: "https://www.linkedin.com/in/jude-akinwale-0/",
   Twitter: "#",
   Phone: "tel:+2349064430102",
   Whatsapp: "https://wa.me/+2349064430102",
-  Resume: "#",
+  Resume: process.env.NEXT_PUBLIC_RESUME_URL,
+  // Resume: "#",
 };
 
 export const userInfo: UserInfo = {

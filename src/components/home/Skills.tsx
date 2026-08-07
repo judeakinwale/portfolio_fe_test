@@ -1,8 +1,7 @@
 import { UserSkills } from "@/types/user";
 import React, { useMemo } from "react";
-import TerminalStartIcon from "../common/ TerminalStartIcon";
-import TitleText from "../common/TitleText";
 import { cn } from "@/lib/utils";
+import SectionHeading from "../common/SectionHeading";
 
 interface SkillProps {
   detailedSkills: UserSkills[];
@@ -63,17 +62,14 @@ const Skills: React.FC<SkillProps> = ({ detailedSkills = [] }) => {
 
       {/* static skills grid */}
       <div className="max-w-7xl grid gap-8 mx-auto px-8 py-24">
-        <div className="flex items-center gap-4">
-          <TerminalStartIcon />
-          <TitleText text="Core Skills" />
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <SectionHeading heading="Core Skills" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {Object.entries(groupedSkills).map(([category, skills], idx) => (
             <div
               key={idx}
               className="p-4 bg-root-bg border-4 border-accent hover:bg-accent hover:text-background hover:-translate-y-1 hover:shadow-[4px_4px_0_var(--color-foreground)] group transition-all duration-200"
             >
-              <div className="mb-2 pb-2 font-archivo text-lg uppercase border-b-2 border-accent/50 group-hover:border-background/50">
+              <div className="mb-2 pb-2 font-archivo text-lg truncate uppercase border-b-2 border-accent/50 group-hover:border-background/50">
                 {category}
               </div>
               <div className="flex flex-wrap gap-1 text-sm font-medium opacity-90">

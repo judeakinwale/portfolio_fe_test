@@ -1,6 +1,5 @@
 import React, { useMemo } from "react";
-import TerminalStartIcon from "../common/ TerminalStartIcon";
-import TitleText from "../common/TitleText";
+import SectionHeading from "../common/SectionHeading";
 import Button from "../common/Button";
 import { UserContact } from "@/types/user";
 import { Download } from "lucide-react";
@@ -8,15 +7,15 @@ import { Download } from "lucide-react";
 interface ContactProps {
   contactInfo?: UserContact;
 }
-const Contact: React.FC<ContactProps> = ({ contactInfo = {} }) => {
+const Contact: React.FC<ContactProps> = ({ contactInfo }) => {
   const email = contactInfo?.Email;
-  const resumeUrl = process.env.NEXT_RESUME_URL || contactInfo?.Resume;
+  const resumeUrl = process.env.NEXT_PUBLIC_RESUME_URL || contactInfo?.Resume;
   const contactLinks = useMemo(() => {
-    const excludedKeys = ["Email", "Resume"].map((key) => key.toLowerCase());
-    return Object.entries(contactInfo)
+    const excludeKeys = ["Email", "Resume"].map((key) => key.toLowerCase());
+    return Object.entries(contactInfo || {})
       .filter(
         ([key, value]) =>
-          !excludedKeys.includes(key?.toLowerCase()) && !!value && value !== "#",
+          !excludeKeys.includes(key?.toLowerCase()) && !!value && value !== "#",
       )
       ?.map(([key, value]) => {
         return {
@@ -33,10 +32,7 @@ const Contact: React.FC<ContactProps> = ({ contactInfo = {} }) => {
   return (
     <section id="contact" className="py-24">
       <div className="max-w-7xl grid gap-8 mx-auto px-8">
-        <div className="flex items-center gap-4">
-          <TerminalStartIcon />
-          <TitleText text="Contact Me" />
-        </div>
+        <SectionHeading heading="Contact Me" />
         <div className="grid grid-cols-1 md:grid-cols-2 bg-background border-4 border-accent">
           <div className="p-8 md:p-16 border-b-4 md:border-b-0 md:border-r-4 border-accent">
             <h3 className="text-[clamp(3rem,6vw,4rem)] font-archivo uppercase mb-8 leading-none">
