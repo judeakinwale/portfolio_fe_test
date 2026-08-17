@@ -22,7 +22,7 @@ const TopNav = () => {
     if (!showNav) {
       setShowNav(true);
       document.addEventListener("click", handleOutsideClick);
-      return;
+      return; 
     }
     setShowNav(false);
     document.removeEventListener("click", handleOutsideClick);
@@ -55,7 +55,7 @@ const TopNav = () => {
         {username}
       </a>
       <div className="hidden md:flex">{renderedNavItems}</div>
-      <div ref={navRef} className="relative group flex transition-all">
+      <div ref={navRef} className="relative group flex md:hidden transition-all">
         <div className="m-2 p-2 font-bold tr" onClick={toggleNav}>
           {showNav ? <X /> : <Menu />}
         </div>
